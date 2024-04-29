@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+.blog-container {
+  /* Asegura que el encabezado no esté centrado verticalmente */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh; /* Ajusta la altura según sea necesario */
+}
+
+.header {
+  text-align: center; /* Centra cualquier contenido dentro del encabezado horizontalmente */
+}
+
+.centered-image {
+  display: block; /* Asegura que la imagen se muestre como un bloque */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
