@@ -1,10 +1,15 @@
+
 import Header from "../components/header";
+import Background from "../components/background";
+
 function Blog(){
     return (
-    <div className="blog-container">
+        <>
         <Header />
-    </div>
-    );
+        <Background />
+        </>
+
+        );
 }
 
 export default Blog

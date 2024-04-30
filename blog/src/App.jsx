@@ -10,9 +10,7 @@ function App() {
     setRutaActual(window.location.pathname)
   }, [])
   return(
-    <div>
       <Router ruta={rutaActual}></Router>
-    </div>
   )
 }
 

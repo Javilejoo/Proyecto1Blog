@@ -1,8 +1,8 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+ padding: 0;
+ margin: 0;
+ height: 100vh;
+  width: 95%;
 }
 
 .logo {
@@ -41,19 +41,7 @@
   color: #888;
 }
 
-.blog-container {
-  /* Asegura que el encabezado no esté centrado verticalmente */
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  height: 100vh; /* Ajusta la altura según sea necesario */
-}
 
-.header {
-  text-align: center; /* Centra cualquier contenido dentro del encabezado horizontalmente */
-}
+.header{
 
-.centered-image {
-  display: block; /* Asegura que la imagen se muestre como un bloque */
-  margin: 0 auto; /* Centra la imagen horizontalmente */
 }
