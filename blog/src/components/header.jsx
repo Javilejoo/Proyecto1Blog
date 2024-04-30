@@ -10,10 +10,7 @@ function Header() {
             <div>
                 <Button variant="contained" href="/login"> Login </Button>
             </div>
-        </header>
-        
-            
-        
+        </header>   
     )
 }
 
