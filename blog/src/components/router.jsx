@@ -1,21 +1,24 @@
+import React from "react"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom" // Importa Routes en lugar de Switch
 import Blog from "../view/blog"
-import Login from '../components/login';
-import AdminBlog from "../view/adminBlog";
-function Router({ ruta }) {
-    switch (ruta) {
-        case "/":
-            return <Blog></Blog>
-        case "/login":
-            return <Login></Login>
-        case "/admin":
-            return <AdminBlog></AdminBlog>
-        default:
-            return (
-                <div>
-                    <h1>Ruta actual {ruta}</h1>
-                </div>
-            )
-    }
-}
+import Login from '../components/login'
+import AdminBlog from "../view/adminBlog"
+import CharacterID from "./characterID"
 
-export default Router
+
+
+function AppRouter() {
+    return (
+      <Router>
+        <Routes> {/* Usa Routes en lugar de Switch */}
+          <Route exact path="/" element={<Blog />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<AdminBlog />} />
+          <Route path="/character/:id" element={<CharacterID />} />
+          <Route path="*" element={<div><h1>Ruta no encontrada</h1></div>} />
+        </Routes> {/* Usa Routes en lugar de Switch */}
+      </Router>
+    );
+  }
+  
+  export default AppRouter

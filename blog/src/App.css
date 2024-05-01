@@ -41,37 +41,3 @@
   color: #888;
 }
 
-.character-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.character-card {
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  text-align: center;
-}
-
-.character-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.character-card p {
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: bold;
-}
-.backgroundContent {
-  background-color: #f0f0f0;
-  padding: 20px;
-}
-
-.content-box {
-  margin: 0 auto;
-  max-width: 1200px;
-}

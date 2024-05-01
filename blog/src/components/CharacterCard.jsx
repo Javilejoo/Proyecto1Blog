@@ -3,9 +3,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import CardActionArea from '@mui/material/CardActionArea'; // Importar CardActionArea
-import '/src/App.css';
-function Content() {
+import { CardActionArea } from '@mui/material';
+
+function CharacterCard() {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -23,11 +23,11 @@ function Content() {
   }, []);
 
   return (
-    <div className="backgroundContent">
-      <div className="content-box">
-        {characters.map(character => (
-          <Card key={character.id} sx={{ maxWidth: 200 }}>
-            <CardActionArea> {/* Usar CardActionArea */}
+    <>
+      {characters.map(character => (
+        <a key={character.id} href={`/character/${character.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Card sx={{ maxWidth: 200 }}>
+            <CardActionArea>
               <CardMedia
                 component="img"
                 height="150"
@@ -41,10 +41,10 @@ function Content() {
               </CardContent>
             </CardActionArea>
           </Card>
-        ))}
-      </div>
-    </div>
+        </a>
+      ))}
+    </>
   );
 }
 
-export default Content;
+export default CharacterCard;
