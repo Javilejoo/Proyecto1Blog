@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 function CharacterID() {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
   const [loading, setLoading] = useState(true);
+  const isAdmin = window.location.pathname.startsWith('/admin'); // Verifica si la ruta actual comienza con '/admin'
 
   useEffect(() => {
     async function fetchCharacter() {
@@ -45,6 +46,16 @@ function CharacterID() {
       <p>Epithet: {character.data[0].epithet}</p>
       <p>Occupation: {character.data[0].occupation}</p>
       <img src={character.data[0].imageUrl} alt={character.data[0].name} />
+
+      {/* Mostrar botones solo si es un administrador */}
+      {isAdmin && (
+        <div>
+          <Link to={`/admin/character/${id}/update`}>
+            <button>Actualizar</button>
+          </Link>
+          <button>Eliminar</button>
+        </div>
+      )}
     </div>
   );
 }

@@ -4,9 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { useLocation } from 'react-router-dom'; // Importa useLocation desde React Router
 
 function CharacterCard() {
   const [characters, setCharacters] = useState([]);
+  const location = useLocation(); // Obtiene la ubicación actual
 
   useEffect(() => {
     async function fetchData() {
@@ -25,7 +27,7 @@ function CharacterCard() {
   return (
     <>
       {characters.map(character => (
-        <a key={character.id} href={`/character/${character.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <a key={character.id} href={`${location.pathname === '/admin' ? '/admin' : ''}/character/${character.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
           <Card sx={{ maxWidth: 200 }}>
             <CardActionArea>
               <CardMedia

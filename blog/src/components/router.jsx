@@ -15,6 +15,7 @@ function AppRouter() {
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminBlog />} />
           <Route path="/character/:id" element={<CharacterID />} />
+          <Route path="/admin/character/:id" element={<CharacterID />} /> 
           <Route path="*" element={<div><h1>Ruta no encontrada</h1></div>} />
         </Routes> {/* Usa Routes en lugar de Switch */}
       </Router>
