@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Button from '@mui/material/Button';
+import Header from './header';
 
 function Login() {
   const { register, handleSubmit } = useForm();
@@ -16,7 +17,10 @@ function Login() {
   };
 
   return (
-    <div>
+    <>
+    <Header/>
+        <div className='backgroundContent'>
+      <div className="login-container"> {}
       <h1>Login</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="text" placeholder="Usuario" {...register('username')} />
@@ -24,6 +28,9 @@ function Login() {
         <Button type="submit" variant="contained" color="primary">Iniciar sesión</Button>
       </form>
     </div>
+    </div>
+    </>
+
   );
 }
 

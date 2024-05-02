@@ -72,6 +72,82 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* Añade un fondo al encabezado */
+  background-color: rgba(255, 255, 255, 0.4); /* Añade un fondo al encabezado */
   z-index: 100; /* Asegura que el encabezado esté encima de otros elementos */
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.4); /* Fondo transparente */
+  padding: 20px; /* Espaciado interior */
+  border-radius: 10px; /* Bordes redondeados */
+  max-width: 400px; /* Ancho máximo del contenedor */
+  margin: 80px auto 0 ; /* Centrar horizontalmente */
+}
+
+.login-container h1 {
+  text-align: center; /* Centrar el título */
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container input {
+  margin-bottom: 10px;
+}
+
+.login-container Button {
+  margin-top: 10px;
+}
+
+
+
+/* Crear personaje css */
+/* CrearPersonaje.css */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo transparente */
+  padding: 15px; /* Espaciado interior */
+  border-radius: 8px; /* Bordes redondeados */
+  max-width: 300px; /* Ancho máximo del contenedor */
+  margin: 50px auto 0; /* Centrar horizontalmente y agregar margen superior */
+}
+
+.form-container h1 {
+  font-size: 20px; /* Tamaño del título */
+  text-align: center; /* Centrar el título */
+  margin-bottom: 15px; /* Espacio inferior del título */
+}
+
+.input-field, .textarea-field {
+  width: calc(100% - 22px); /* Ancho del campo de entrada */
+  margin-bottom: 10px; /* Espacio inferior entre campos */
+  padding: 8px; /* Espaciado dentro del campo */
+  border: 1px solid #ccc; /* Borde del campo */
+  border-radius: 4px; /* Bordes redondeados del campo */
+  font-size: 14px; /* Tamaño de fuente */
+}
+
+.textarea-field {
+  resize: vertical; /* Permitir redimensionamiento vertical */
+}
+
+.input-field:focus, .textarea-field:focus {
+  outline: none; /* Eliminar el contorno al estar enfocado */
+  border-color: #007bff; /* Color del borde al estar enfocado */
+}
+
+.Button {
+  width: 100%; /* Ancho del botón */
+  padding: 8px; /* Espaciado dentro del botón */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados del botón */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cursor */
+  background-color: #007bff; /* Color de fondo */
+  color: white; /* Color del texto */
+}
+
+.Button:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
 }

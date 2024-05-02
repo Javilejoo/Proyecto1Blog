@@ -28,13 +28,14 @@ function CharacterCard() {
     <>
       {characters.map(character => (
         <a key={character.id} href={`${location.pathname === '/admin' ? '/admin' : ''}/character/${character.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Card sx={{ maxWidth: 200 }}>
+          <Card style={{ width: '200px', height: '100%', marginBottom: '20px' }}>
             <CardActionArea>
               <CardMedia
                 component="img"
-                height="150"
+                height="auto"
                 image={character.imageUrl}
                 alt={character.name}
+                style={{ maxHeight: '150px' }} // Establece la altura máxima de la imagen
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
@@ -48,5 +49,4 @@ function CharacterCard() {
     </>
   );
 }
-
 export default CharacterCard;
