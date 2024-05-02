@@ -5,9 +5,6 @@ function AdminBlog() {
     <>
     <Header />
     <Background />
-    <div>
-      <h1>Admin Blog</h1>
-    </div>
     </>
   );
 }

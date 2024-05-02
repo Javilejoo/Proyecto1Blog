@@ -2,7 +2,7 @@
  padding: 0;
  margin: 0;
  height: 100vh;
-  width: 95%;
+  width: 100%;
 }
 
 .logo {
@@ -41,3 +41,37 @@
   color: #888;
 }
 
+.backgroundContent {
+  background-image: url('https://wallpapers-clan.com/wp-content/uploads/2023/11/one-piece-world-map-desktop-wallpaper-preview.jpg');
+  background-size: 100% 100%; /* Ajusta el tamaño para que cubra toda la pantalla */
+  background-position: center;
+  height: 100vh;
+  padding-top: 60px; /* Ajusta el espacio para el encabezado */
+}
+
+
+.content-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias líneas */
+  justify-content: center; /* Centra horizontalmente las tarjetas */
+  gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Añade un fondo al encabezado */
+  z-index: 100; /* Asegura que el encabezado esté encima de otros elementos */
+}
