@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom'; // Importa useLocation desde Rea
 
 function CharacterCard() {
   const [characters, setCharacters] = useState([]);
+  const [hoveredCard, setHoveredCard] = useState(null);
   const location = useLocation(); // Obtiene la ubicación actual
 
   useEffect(() => {
@@ -28,14 +29,17 @@ function CharacterCard() {
     <>
       {characters.map(character => (
         <a key={character.id} href={`${location.pathname === '/admin' ? '/admin' : ''}/character/${character.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Card style={{ width: '200px', height: '100%', marginBottom: '20px' }}>
+          <Card
+            sx={{ maxWidth: 200, opacity: hoveredCard === character.id ? 1 : 0.4, transition: 'opacity 0.3s' }}
+            onMouseEnter={() => setHoveredCard(character.id)}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
             <CardActionArea>
               <CardMedia
                 component="img"
-                height="auto"
+                height="150"
                 image={character.imageUrl}
                 alt={character.name}
-                style={{ maxHeight: '150px' }} // Establece la altura máxima de la imagen
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
@@ -49,4 +53,5 @@ function CharacterCard() {
     </>
   );
 }
+
 export default CharacterCard;
