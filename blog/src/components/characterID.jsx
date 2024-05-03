@@ -66,7 +66,7 @@ function CharacterID() {
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.5' }}>
             <p><strong>Age:</strong> {age}</p>
             <p><strong>Bounty:</strong> {bounty}</p>
-            <p style={{ whiteSpace: 'pre-wrap' }}>{description}</p>
+            <p><strong> Descripcion:</strong> {description}</p>
             <p><strong>Devil Fruit:</strong> {devilFruit}</p>
             <p><strong>Epithet:</strong> {epithet}</p>
             <p><strong>Occupation:</strong> {occupation}</p>
@@ -77,7 +77,7 @@ function CharacterID() {
               <Link to={`/admin/character/${id}/update`} style={{ marginRight: '10px' }}>
                 <button>Actualizar</button>
               </Link>
-              
+
               <DeleteCharacter id={id} handleDelete={handleDeleteCharacter} />
 
             </div>
