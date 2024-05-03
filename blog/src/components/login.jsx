@@ -20,10 +20,10 @@ function Login() {
     }
   };
 
-  // Función para limpiar el localStorage si la ruta no contiene '/admin'
+  // Función para limpiar el localStorage en las rutas específicas
   const clearLocalStorage = () => {
     const currentLocation = location.pathname;
-    if (!currentLocation.includes('/admin')) {
+    if (currentLocation === '/' || currentLocation.includes('/character/') || currentLocation === '/login') {
       localStorage.removeItem('user');
       localStorage.removeItem('isActive');
     }
