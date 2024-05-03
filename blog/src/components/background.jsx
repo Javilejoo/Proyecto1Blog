@@ -1,6 +1,8 @@
 import CharacterCard from "./CharacterCard";
 
+
 function Background() {
+
   return (
     <div className="backgroundContent">
       <div className="content-box">
