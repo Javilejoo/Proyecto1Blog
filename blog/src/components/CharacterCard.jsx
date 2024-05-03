@@ -28,20 +28,26 @@ function CharacterCard() {
   return (
     <>
       {characters.map(character => (
-        <a key={character.id} href={`${location.pathname === '/admin' ? '/admin' : ''}/character/${character.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <a key={character.id} href={`${location.pathname === '/admin'? '/admin' : ''}/character/${character.id}`} style={{ textDecoration: 'none', color: 'inherit', width: '150px', marginBottom: '15px' }}>
           <Card
-            sx={{ maxWidth: 200, opacity: hoveredCard === character.id ? 1 : 0.4, transition: 'opacity 0.3s' }}
+            sx={{
+              maxWidth: 150, 
+              height: 250, // Reduced height
+              width: 150, // Reduced width
+              opacity: hoveredCard === character.id? 1 : 0.4, 
+              transition: 'opacity 0.3s'
+            }}
             onMouseEnter={() => setHoveredCard(character.id)}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <CardActionArea>
+            <CardActionArea style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <CardMedia
                 component="img"
-                height="150"
+                height="100" // Reduced height
                 image={character.imageUrl}
                 alt={character.name}
               />
-              <CardContent>
+              <CardContent style={{ flexGrow: 1 }}>
                 <Typography gutterBottom variant="h5" component="div">
                   {character.name}
                 </Typography>
