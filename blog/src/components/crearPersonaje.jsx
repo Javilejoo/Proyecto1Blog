@@ -7,6 +7,11 @@ function CrearPersonaje() {
     const { register, handleSubmit } = useForm();
   
     const onSubmit = async (data) => {
+      const isEmpty = Object.values(data).some((value) => !value);
+      if (isEmpty) {
+        alert('Debe llenar todos los campos para agregar el personaje.');
+        return;
+      }
       try {
         // Realizar una solicitud para agregar el personaje a la base de datos
         await fetch('http://127.0.0.1:3010/posts', {
