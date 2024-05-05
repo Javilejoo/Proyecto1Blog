@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Importa Routes en lugar de Switch
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Blog from "../view/blog";
 import Login from '../components/login';
 import AdminBlog from "../view/adminBlog";
@@ -11,7 +11,7 @@ function AppRouter() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Blog />} />
+        <Route path="/" element={<Blog />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminBlog />} />
         <Route path="/character/:id" element={<CharacterID />} />
