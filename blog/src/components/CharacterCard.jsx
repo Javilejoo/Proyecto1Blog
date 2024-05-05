@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { useLocation } from 'react-router-dom'; // Importa useLocation desde React Router
+import EmptyState from './emptyState'; // Importa el componente EmptyState
 
 function CharacterCard() {
   const [characters, setCharacters] = useState([]);
@@ -24,6 +25,10 @@ function CharacterCard() {
 
     fetchData();
   }, []);
+
+  if (characters.length === 0) {
+    return <EmptyState />;
+  }
 
   return (
     <>
