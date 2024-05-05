@@ -31,11 +31,13 @@ function CharacterCard() {
         <a key={character.id} href={`${location.pathname === '/admin'? '/admin' : ''}/character/${character.id}`} style={{ textDecoration: 'none', color: 'inherit', width: '150px', marginBottom: '15px' }}>
           <Card
             sx={{
-              maxWidth: 150, 
-              height: 250, // Reduced height
-              width: 150, // Reduced width
-              opacity: hoveredCard === character.id? 1 : 0.4, 
-              transition: 'opacity 0.3s'
+              maxWidth: 150,
+              height: 250,
+              width: 150,
+              borderRadius: 8, // Bordes redondeados
+              boxShadow: hoveredCard === character.id? '0px 4px 20px rgba(0, 0, 0, 0.1)' : '0px 2px 10px rgba(0, 0, 0, 0.1)', // Sombra
+              transition: 'box-shadow 0.3s', // Transición de sombra
+              opacity: hoveredCard === character.id? 1 : 0.8,
             }}
             onMouseEnter={() => setHoveredCard(character.id)}
             onMouseLeave={() => setHoveredCard(null)}
@@ -43,12 +45,13 @@ function CharacterCard() {
             <CardActionArea style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <CardMedia
                 component="img"
-                height="100" // Reduced height
+                height="100"
                 image={character.imageUrl}
                 alt={character.name}
+                style={{ borderTopLeftRadius: 8, borderTopRightRadius: 8 }} // Bordes redondeados solo en la parte superior
               />
               <CardContent style={{ flexGrow: 1 }}>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h6" component="div" style={{ fontWeight: 'bold' }}> {/* Texto más grande y negrita */}
                   {character.name}
                 </Typography>
               </CardContent>
