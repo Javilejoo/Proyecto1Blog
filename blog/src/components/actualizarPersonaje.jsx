@@ -1,12 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Header from './header';
+import { useParams } from 'react-router-dom'; // Importa useParams desde react-router-dom
+import useApi from './useApi'; // Importa el hook useApi
 
-function ActualizarPeronaje() {
+function ActualizarPersonaje() {
   const { register, handleSubmit } = useForm();
-  const { id } = useParams();
+  const { putData } = useApi(); // Usa el hook useApi para realizar la solicitud
+  const { id } = useParams(); // Usa useParams para obtener el parámetro de la URL
 
   const onSubmit = async (data) => {
     const isEmpty = Object.values(data).some((value) => !value);
@@ -16,13 +18,7 @@ function ActualizarPeronaje() {
     }
 
     try {
-      await fetch(`http://127.0.0.1:3010/characters/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      await putData(`http://127.0.0.1:3010/characters/${id}`, data);
       window.location.href = '/admin';
     } catch (error) {
       console.error('Error al actualizar el personaje:', error);
@@ -53,4 +49,4 @@ function ActualizarPeronaje() {
   );
 }
 
-export default ActualizarPeronaje;
+export default ActualizarPersonaje;
