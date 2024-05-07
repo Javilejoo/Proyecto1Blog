@@ -31,7 +31,6 @@ Este proyecto es un blog dedicado al mundo de One Piece, donde los usuarios pued
 2. **Instalar dependencias**: Ve al directorio del proyecto y ejecuta el siguiente comando para instalar las dependencias necesarias:
 
     ```
-    cd blog
     npm install
     ```
 
@@ -42,7 +41,6 @@ Este proyecto es un blog dedicado al mundo de One Piece, donde los usuarios pued
     - Para el frontend con React y Vite:
 
     ```
-    cd blog
     npm run dev
     ```
 
