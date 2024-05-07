@@ -16,7 +16,7 @@ function CrearPersonaje() {
       }
       try {
         // Realizar una solicitud para agregar el personaje a la base de datos
-        await postData('http://127.0.0.1:3010/posts', data);
+        await postData('https://onepieceblog-13817415a776.herokuapp.com/posts', data);
         // Redirigir a la página de administración después de agregar el personaje
         window.location.href = '/admin';
       } catch (error) {

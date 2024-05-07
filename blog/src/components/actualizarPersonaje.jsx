@@ -18,7 +18,7 @@ function ActualizarPersonaje() {
     }
 
     try {
-      await putData(`http://127.0.0.1:3010/characters/${id}`, data);
+      await putData(`https://onepieceblog-13817415a776.herokuapp.com/characters/${id}`, data);
       window.location.href = '/admin';
     } catch (error) {
       console.error('Error al actualizar el personaje:', error);

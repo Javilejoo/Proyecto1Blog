@@ -15,7 +15,7 @@ function CharacterCard() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('http://127.0.0.1:3010/posts');
+        const response = await fetch('https://onepieceblog-13817415a776.herokuapp.com/posts');
         const responseData = await response.json();
         setCharacters(responseData.data);
       } catch (error) {

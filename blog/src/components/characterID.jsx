@@ -13,7 +13,7 @@ function CharacterID() {
   useEffect(() => {
     async function fetchCharacter() {
       try {
-        const response = await fetch(`http://127.0.0.1:3010/posts/${id}`);
+        const response = await fetch(`https://onepieceblog-13817415a776.herokuapp.com/posts/${id}`);
         const responseData = await response.json();
         console.log('Character data:', responseData);
         if (responseData.status === 200) {
@@ -34,7 +34,7 @@ function CharacterID() {
 
   const handleDeleteCharacter = async () => {
     try {
-      await fetch(`http://127.0.0.1:3010/posts/${id}`, {
+      await fetch(`https://onepieceblog-13817415a776.herokuapp.com/${id}`, {
         method: 'DELETE',
       });
       // Después de eliminar el personaje, redirige a la ruta /admin

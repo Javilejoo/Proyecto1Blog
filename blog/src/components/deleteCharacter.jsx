@@ -6,7 +6,7 @@ function DeleteCharacter({ id, handleDelete }) {
 
     const deleteCharacter = async () => {
         try {
-            await deleteData(`http://127.0.0.1:3010/posts/${id}`);
+            await deleteData(`https://onepieceblog-13817415a776.herokuapp.com/posts/${id}`);
             handleDelete(); // Llama a la función de manejo después de la eliminación
         } catch (error) {
             console.error('Error deleting character:', error);
